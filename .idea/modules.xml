@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PersonalFinancialAssistance.iml" filepath="$PROJECT_DIR$/PersonalFinancialAssistance.iml" />
-      <module fileurl="file://D:/Kuliah/Sem 5/RPL/PFA/PersonalFinancialAssistance/PersonalFinancialAssistance.iml" filepath="D:/Kuliah/Sem 5/RPL/PFA/PersonalFinancialAssistance/PersonalFinancialAssistance.iml" />
+      <module fileurl="file://D:\Kuliah\Sem 5\RPL\PFA\PersonalFinancialAssistance\PersonalFinancialAssistance.iml" filepath="D:\Kuliah\Sem 5\RPL\PFA\PersonalFinancialAssistance\PersonalFinancialAssistance.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:/Kuliah/Sem 5/RPL/PFA/PersonalFinancialAssistance/app/app.iml" filepath="D:/Kuliah/Sem 5/RPL/PFA/PersonalFinancialAssistance/app/app.iml" />
+      <module fileurl="file://D:\Kuliah\Sem 5\RPL\PFA\PersonalFinancialAssistance\app\app.iml" filepath="D:\Kuliah\Sem 5\RPL\PFA\PersonalFinancialAssistance\app\app.iml" />
     </modules>
   </component>
 </project>
