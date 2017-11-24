@@ -27,9 +27,6 @@ import java.util.List;
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private PieChart dailyPieChart;
-    private PieChart weeklyPieChart;
-    private PieChart monthlyPieChart;
 
     public static void startThisActivity(Activity parent) {
         Intent intent = new Intent(parent,DashboardActivity.class);
@@ -60,46 +57,46 @@ public class DashboardActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        monthlyPieChart = (PieChart) findViewById(R.id.monthlyPieChart);
-        weeklyPieChart = (PieChart) findViewById(R.id.weeklyPieChart);
-        dailyPieChart = (PieChart) findViewById(R.id.dailyPieChart);
-        createDummy();
+//        monthlyPieChart = (PieChart) findViewById(R.id.monthlyPieChart);
+//        weeklyPieChart = (PieChart) findViewById(R.id.weeklyPieChart);
+//        dailyPieChart = (PieChart) findViewById(R.id.dailyPieChart);
+        //createDummy();
     }
-    private void createDummy(){
-        List<PieEntry> listEntryData = new ArrayList<>();
-        listEntryData.add(new PieEntry(10000,"Income"));
-        listEntryData.add(new PieEntry(20000,"OutCome"));
-        listEntryData.add(new PieEntry(30000,"Free-to-Use Money"));
-        listEntryData.add(new PieEntry(40000,"Irregularity"));
-//        listEntryData.add(new PieEntry(18.5f, "Green"));
-//        listEntryData.add(new PieEntry(26.7f, "Yellow"));
-//        listEntryData.add(new PieEntry(24.0f, "Red"));
-//        listEntryData.add(new PieEntry(30.8f, "Blue"));
-        PieDataSet dataSetMonthly = new PieDataSet(listEntryData,"Monthly");
-        PieDataSet dataSetWeekly = new PieDataSet(listEntryData,"Weekly");
-        PieDataSet dataSetDaily = new PieDataSet(listEntryData,"Daily");
-        PieData dataMonthly = new PieData(dataSetMonthly);
-        PieData dataWeekly = new PieData(dataSetWeekly);
-        PieData dataDaily = new PieData(dataSetDaily);
-        dataDaily.setValueTextColor(Color.WHITE);
-        dataWeekly.setValueTextColor(Color.WHITE);
-        dataMonthly.setValueTextColor(Color.WHITE);
-        dataSetDaily.setValueTextColor(Color.WHITE);
-        dataSetWeekly.setValueTextColor(Color.WHITE);
-        dataSetMonthly.setValueTextColor(Color.WHITE);
-        dataSetDaily.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-        dataSetWeekly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-        dataSetMonthly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-        monthlyPieChart.setData(dataMonthly);
-        dailyPieChart.setData(dataDaily);
-        weeklyPieChart.setData(dataWeekly);
-        monthlyPieChart.invalidate();
-        dailyPieChart.invalidate();
-        weeklyPieChart.invalidate();
-        monthlyPieChart.notifyDataSetChanged();
-        dailyPieChart.notifyDataSetChanged();
-        weeklyPieChart.notifyDataSetChanged();
-    }
+//    private void createDummy(){
+//        List<PieEntry> listEntryData = new ArrayList<>();
+//        listEntryData.add(new PieEntry(10000,"Income"));
+//        listEntryData.add(new PieEntry(20000,"OutCome"));
+//        listEntryData.add(new PieEntry(30000,"Free-to-Use Money"));
+//        listEntryData.add(new PieEntry(40000,"Irregularity"));
+////        listEntryData.add(new PieEntry(18.5f, "Green"));
+////        listEntryData.add(new PieEntry(26.7f, "Yellow"));
+////        listEntryData.add(new PieEntry(24.0f, "Red"));
+////        listEntryData.add(new PieEntry(30.8f, "Blue"));
+//        PieDataSet dataSetMonthly = new PieDataSet(listEntryData,"Monthly");
+//        PieDataSet dataSetWeekly = new PieDataSet(listEntryData,"Weekly");
+//        PieDataSet dataSetDaily = new PieDataSet(listEntryData,"Daily");
+//        PieData dataMonthly = new PieData(dataSetMonthly);
+//        PieData dataWeekly = new PieData(dataSetWeekly);
+//        PieData dataDaily = new PieData(dataSetDaily);
+//        dataDaily.setValueTextColor(Color.WHITE);
+//        dataWeekly.setValueTextColor(Color.WHITE);
+//        dataMonthly.setValueTextColor(Color.WHITE);
+//        dataSetDaily.setValueTextColor(Color.WHITE);
+//        dataSetWeekly.setValueTextColor(Color.WHITE);
+//        dataSetMonthly.setValueTextColor(Color.WHITE);
+//        dataSetDaily.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
+//        dataSetWeekly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
+//        dataSetMonthly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
+//        monthlyPieChart.setData(dataMonthly);
+//        dailyPieChart.setData(dataDaily);
+//        weeklyPieChart.setData(dataWeekly);
+//        monthlyPieChart.invalidate();
+//        dailyPieChart.invalidate();
+//        weeklyPieChart.invalidate();
+//        monthlyPieChart.notifyDataSetChanged();
+//        dailyPieChart.notifyDataSetChanged();
+//        weeklyPieChart.notifyDataSetChanged();
+//    }
 
     @Override
     public void onBackPressed() {
@@ -139,12 +136,8 @@ public class DashboardActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_monthly) {
+        if (id == R.id.nav_history) {
             // Handle the camera action
-        } else if (id == R.id.nav_weekly) {
-
-        } else if (id == R.id.nav_daily) {
-
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
