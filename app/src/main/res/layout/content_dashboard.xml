@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -84,7 +85,7 @@
                 android:layout_column="2"
                 android:text="RP. 50,000" />
         </GridLayout>
-        <!--weekly-->
+        &lt;!&ndash;weekly&ndash;&gt;
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -229,3 +230,104 @@
 
     </LinearLayout>
 </ScrollView>
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.tugas.rpl.personalfinancialassistance.DashboardActivity"
+    tools:showIn="@layout/app_bar_dashboard">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBG"
+            android:text="
+    "
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBG"
+            android:text="      Selamat pagi,"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBG"
+            android:text="      Nama Pengguna"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBG"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBG"
+            android:text="                           Uang dingin"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorBG"
+            android:gravity="top|center_vertical|center_horizontal"
+            android:text="Rp.200.000"
+            android:textColor="@android:color/white"
+            android:textSize="36sp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView9"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="@color/colorBgText"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Tips disini"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="@color/colorBgText"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>
