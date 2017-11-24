@@ -179,6 +179,7 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_monthly) {
+        if (id == R.id.nav_history) {
             // Handle the camera action
         } else if (id == R.id.nav_weekly) {
 
