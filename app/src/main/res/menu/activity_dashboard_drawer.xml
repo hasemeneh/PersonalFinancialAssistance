@@ -5,15 +5,15 @@
         <item
             android:id="@+id/nav_history"
             android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="Monthly" />
+            android:title="History" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Setting" />
         <item
             android:id="@+id/nav_about"
             android:icon="@android:drawable/ic_dialog_alert"
-            android:title="Tools" />
+            android:title="About" />
     </group>
 
 

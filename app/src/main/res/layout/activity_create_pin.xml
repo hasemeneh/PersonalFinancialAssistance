@@ -11,10 +11,18 @@
     tools:layout_editor_absoluteY="8dp">
 
     <EditText
+        android:id="@+id/editTextNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Name Please"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+    <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Password"
+        android:layout_below="@+id/editTextNama"
         android:inputType="numberPassword"
         android:textAlignment="center" />
 
@@ -23,14 +31,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextPassword"
-        android:hint="Enter Konfirmasi Password"
+        android:hint="Enter Password Confirmation"
         android:inputType="numberPassword"
+        android:textAlignment="center" />
+    <EditText
+        android:id="@+id/editTextSecurityQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPasswordConfirmation"
+        android:hint="Enter Security Question"
+        android:inputType="text"
+        android:textAlignment="center" />
+    <EditText
+        android:id="@+id/editTextSecurityAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextSecurityQuestion"
+        android:hint="Enter Security Answer"
+        android:inputType="text"
         android:textAlignment="center" />
 
     <Button
         android:id="@+id/buttonPasswordConfirmation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextPasswordConfirmation"
-        android:text="Confitm and create new" />
+        android:layout_below="@+id/editTextSecurityAnswer"
+        android:text="Confirm and create new" />
 </RelativeLayout>
