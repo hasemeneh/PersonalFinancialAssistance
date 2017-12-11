@@ -5,4 +5,31 @@ package com.tugas.rpl.personalfinancialassistance.Model;
  */
 
 public class DailyDao {
+    final int id,value,type;
+    final String explanatory;
+
+    public DailyDao(int id, int value, int type, String explanatory) {
+        this.id = id;
+        this.value = value;
+        this.type = type;
+        this.explanatory = explanatory;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getType() {
+        return type;
+
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public String getExplanatory() {
+        return explanatory;
+    }
+
 }

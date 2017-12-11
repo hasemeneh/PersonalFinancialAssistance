@@ -15,8 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -26,6 +31,8 @@ import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private TextView txtIsiTips;
+    private LineChart lineChartPengeluaran;
 
 //    private PieChart dailyPieChart;
 //    private PieChart weeklyPieChart;
@@ -47,8 +54,7 @@ public class DashboardActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                AboutActivity.startThisActivity(DashboardActivity.this);
             }
         });
 
@@ -57,88 +63,28 @@ public class DashboardActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
+        txtIsiTips = (TextView) findViewById(R.id.txtIsiTips);
+        txtIsiTips.setSelected(true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-//        monthlyPieChart = (PieChart) findViewById(R.id.monthlyPieChart);
-//        weeklyPieChart = (PieChart) findViewById(R.id.weeklyPieChart);
-//        dailyPieChart = (PieChart) findViewById(R.id.dailyPieChart);
+        lineChartPengeluaran= (LineChart) findViewById(R.id.linechartPengeluaran);
         createDummy();
     }
     private void createDummy(){
-//        List<PieEntry> listEntryData = new ArrayList<>();
-//        listEntryData.add(new PieEntry(10000,"Income"));
-//        listEntryData.add(new PieEntry(20000,"OutCome"));
-//        listEntryData.add(new PieEntry(30000,"Free-to-Use Money"));
-//        listEntryData.add(new PieEntry(40000,"Irregularity"));
-//        listEntryData.add(new PieEntry(18.5f, "Green"));
-//        listEntryData.add(new PieEntry(26.7f, "Yellow"));
-//        listEntryData.add(new PieEntry(24.0f, "Red"));
-//        listEntryData.add(new PieEntry(30.8f, "Blue"));
-//        PieDataSet dataSetMonthly = new PieDataSet(listEntryData,"Monthly");
-//        PieDataSet dataSetWeekly = new PieDataSet(listEntryData,"Weekly");
-//        PieDataSet dataSetDaily = new PieDataSet(listEntryData,"Daily");
-//        PieData dataMonthly = new PieData(dataSetMonthly);
-//        PieData dataWeekly = new PieData(dataSetWeekly);
-//        PieData dataDaily = new PieData(dataSetDaily);
-//        dataDaily.setValueTextColor(Color.WHITE);
-//        dataWeekly.setValueTextColor(Color.WHITE);
-//        dataMonthly.setValueTextColor(Color.WHITE);
-//        dataSetDaily.setValueTextColor(Color.WHITE);
-//        dataSetWeekly.setValueTextColor(Color.WHITE);
-//        dataSetMonthly.setValueTextColor(Color.WHITE);
-//        dataSetDaily.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-//        dataSetWeekly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-//        dataSetMonthly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-//        monthlyPieChart.setData(dataMonthly);
-//        dailyPieChart.setData(dataDaily);
-//        weeklyPieChart.setData(dataWeekly);
-//        monthlyPieChart.invalidate();
-//        dailyPieChart.invalidate();
-//        weeklyPieChart.invalidate();
-//        monthlyPieChart.notifyDataSetChanged();
-//        dailyPieChart.notifyDataSetChanged();
-//        weeklyPieChart.notifyDataSetChanged();
-//        monthlyPieChart = (PieChart) findViewById(R.id.monthlyPieChart);
-//        weeklyPieChart = (PieChart) findViewById(R.id.weeklyPieChart);
-//        dailyPieChart = (PieChart) findViewById(R.id.dailyPieChart);
-        //createDummy();
+        List<Entry> entries = new ArrayList<Entry>();
+        entries.add(new Entry(1.1f,1.2f));
+        entries.add(new Entry(2f,3f));
+        entries.add(new Entry(3f,1.2f));
+        entries.add(new Entry(4f,5f));
+        entries.add(new Entry(5f,2f));
+        entries.add(new Entry(6f,9f));
+        entries.add(new Entry(7f,3f));
+        LineDataSet dataSet1 = new LineDataSet(entries,"Pengeluaran");
+        LineDataSet dataSet2 = new LineDataSet(entries,"Pemasukkan");
+        LineData data2 = new LineData(dataSet1,dataSet2);
+        lineChartPengeluaran.setData(data2);
+        lineChartPengeluaran.invalidate();
     }
-//    private void createDummy(){
-//        List<PieEntry> listEntryData = new ArrayList<>();
-//        listEntryData.add(new PieEntry(10000,"Income"));
-//        listEntryData.add(new PieEntry(20000,"OutCome"));
-//        listEntryData.add(new PieEntry(30000,"Free-to-Use Money"));
-//        listEntryData.add(new PieEntry(40000,"Irregularity"));
-////        listEntryData.add(new PieEntry(18.5f, "Green"));
-////        listEntryData.add(new PieEntry(26.7f, "Yellow"));
-////        listEntryData.add(new PieEntry(24.0f, "Red"));
-////        listEntryData.add(new PieEntry(30.8f, "Blue"));
-//        PieDataSet dataSetMonthly = new PieDataSet(listEntryData,"Monthly");
-//        PieDataSet dataSetWeekly = new PieDataSet(listEntryData,"Weekly");
-//        PieDataSet dataSetDaily = new PieDataSet(listEntryData,"Daily");
-//        PieData dataMonthly = new PieData(dataSetMonthly);
-//        PieData dataWeekly = new PieData(dataSetWeekly);
-//        PieData dataDaily = new PieData(dataSetDaily);
-//        dataDaily.setValueTextColor(Color.WHITE);
-//        dataWeekly.setValueTextColor(Color.WHITE);
-//        dataMonthly.setValueTextColor(Color.WHITE);
-//        dataSetDaily.setValueTextColor(Color.WHITE);
-//        dataSetWeekly.setValueTextColor(Color.WHITE);
-//        dataSetMonthly.setValueTextColor(Color.WHITE);
-//        dataSetDaily.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-//        dataSetWeekly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-//        dataSetMonthly.setColors(new int[]{Color.BLUE,Color.YELLOW, Color.RED, Color.GREEN});
-//        monthlyPieChart.setData(dataMonthly);
-//        dailyPieChart.setData(dataDaily);
-//        weeklyPieChart.setData(dataWeekly);
-//        monthlyPieChart.invalidate();
-//        dailyPieChart.invalidate();
-//        weeklyPieChart.invalidate();
-//        monthlyPieChart.notifyDataSetChanged();
-//        dailyPieChart.notifyDataSetChanged();
-//        weeklyPieChart.notifyDataSetChanged();
-//    }
 
     @Override
     public void onBackPressed() {

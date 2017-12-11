@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -84,7 +85,7 @@
                 android:layout_column="2"
                 android:text="RP. 50,000" />
         </GridLayout>
-        <!--weekly-->
+        &lt;!&ndash;weekly&ndash;&gt;
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -229,3 +230,40 @@
 
     </LinearLayout>
 </ScrollView>
+-->
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.tugas.rpl.personalfinancialassistance.DashboardActivity"
+    tools:showIn="@layout/app_bar_dashboard">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="60dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="7dp"
+            android:textSize="10pt"
+            android:textStyle="bold|italic"
+            android:textColor="#f5b317"
+            android:layout_height="wrap_content" android:text="Pengeluaran"/>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechartPengeluaran"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+    </LinearLayout>
+
+
+
+
+</android.support.v4.widget.NestedScrollView>

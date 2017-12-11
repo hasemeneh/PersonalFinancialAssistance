@@ -5,7 +5,14 @@ package com.tugas.rpl.personalfinancialassistance.Model;
  */
 
 public class UserDao {
-    String nama,secQuestion,secAnswer,PIN;
+    final String nama,secQuestion,secAnswer,PIN;
+
+    public UserDao(String nama, String secQuestion, String secAnswer, String pin) {
+        this.nama = nama;
+        this.secQuestion = secQuestion;
+        this.secAnswer = secAnswer;
+        PIN = pin;
+    }
 
     public String getNama() {
         return nama;
@@ -23,19 +30,4 @@ public class UserDao {
         return secQuestion;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setPIN(String PIN) {
-        this.PIN = PIN;
-    }
-
-    public void setSecAnswer(String secAnswer) {
-        this.secAnswer = secAnswer;
-    }
-
-    public void setSecQuestion(String secQuestion) {
-        this.secQuestion = secQuestion;
-    }
 }

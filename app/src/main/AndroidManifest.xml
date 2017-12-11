@@ -20,6 +20,19 @@
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity" />
+        <activity
+            android:name=".Bench.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Bench.TabbedActivity"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScheduledActivity"
+            android:label="@string/title_activity_scheduled"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
