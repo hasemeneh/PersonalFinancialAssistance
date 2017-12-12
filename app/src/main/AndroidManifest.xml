@@ -34,7 +34,9 @@
             android:name=".ScheduledActivity"
             android:label="@string/title_activity_scheduled"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Setting"></activity>
+        <activity android:name=".Setting" />
+        <activity android:name=".editProfile" />
+        <activity android:name=".changePin"></activity>
     </application>
 
 </manifest>
