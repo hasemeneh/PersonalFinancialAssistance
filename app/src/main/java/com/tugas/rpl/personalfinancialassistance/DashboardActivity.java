@@ -19,20 +19,32 @@ import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.tugas.rpl.personalfinancialassistance.Adapter.ScheduledPagerAdapter;
+import com.tugas.rpl.personalfinancialassistance.Model.WeeklyStatisticsDao;
+import com.tugas.rpl.personalfinancialassistance.Util.DatabaseManager.DBManager;
 
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView txtIsiTips;
     private LineChart lineChartPengeluaran;
+    private TextView txtFreeToUseMoney;
 
 //    private PieChart dailyPieChart;
 //    private PieChart weeklyPieChart;
@@ -63,6 +75,7 @@ public class DashboardActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+        txtFreeToUseMoney = (TextView) findViewById(R.id.textViewFreeToUseMoney);
         txtIsiTips = (TextView) findViewById(R.id.txtIsiTips);
         txtIsiTips.setSelected(true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -71,19 +84,53 @@ public class DashboardActivity extends AppCompatActivity
         createDummy();
     }
     private void createDummy(){
-        List<Entry> entries = new ArrayList<Entry>();
-        entries.add(new Entry(1.1f,1.2f));
-        entries.add(new Entry(2f,3f));
-        entries.add(new Entry(3f,1.2f));
-        entries.add(new Entry(4f,5f));
-        entries.add(new Entry(5f,2f));
-        entries.add(new Entry(6f,9f));
-        entries.add(new Entry(7f,3f));
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(new Locale("in_ID"));
+        txtFreeToUseMoney.setText(numberFormat.format(DBManager.getFreeToUseMoney(this)));
+        final List<Entry> entries = new ArrayList<Entry>();
+        final List<Entry> entries2 = new ArrayList<Entry>();
+        final List<WeeklyStatisticsDao> temp1 = new ArrayList<>();
+        temp1.addAll(DBManager.getWeeklyStatistics(this));
+//        Calendar calendar = Calendar.getInstance();
+//        Calendar calendar2 = Calendar.getInstance();
+//        calendar.add(Calendar.DAY_OF_YEAR,1);
+//        Date endDate = calendar2.getTime();
+//        calendar.setTime(endDate);
+//        calendar.add(Calendar.DAY_OF_YEAR,-8);
+//        Date startDate = calendar.getTime();
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd");
+//        Date iterator = (Date) startDate.clone();
+//        while(!iterator.equals(endDate)){
+//
+//
+//        }
+        int size = temp1.size();
+        for (int i =0;i<size;i++){
+            //if((i+1))
+        }
+
+//        entries.add(new Entry(1.1f,1.2f));
+//        entries.add(new Entry(2f,3f));
+//        entries.add(new Entry(3f,1.2f));
+//        entries.add(new Entry(4f,5f));
+//        entries.add(new Entry(5f,2f));
+//        entries.add(new Entry(6f,9f));
+//        entries.add(new Entry(7f,3f));
+//        entries2.add(new Entry(1.1f,4f));
+//        entries2.add(new Entry(2f,2f));
+//        entries2.add(new Entry(3f,3f));
+//        entries2.add(new Entry(4f,6f));
+//        entries2.add(new Entry(5f,8f));
+//        entries2.add(new Entry(6f,9f));
+//        entries2.add(new Entry(7f,9f));
+
         LineDataSet dataSet1 = new LineDataSet(entries,"Pengeluaran");
-        LineDataSet dataSet2 = new LineDataSet(entries,"Pemasukkan");
+        dataSet1.setColor(Color.rgb(245,179,23));
+        LineDataSet dataSet2 = new LineDataSet(entries2,"Pemasukkan");
+        dataSet2.setColor(Color.rgb(128,211,77));
         LineData data2 = new LineData(dataSet1,dataSet2);
         lineChartPengeluaran.setData(data2);
         lineChartPengeluaran.invalidate();
+        lineChartPengeluaran.animateXY(2000,2000);
     }
 
     @Override
@@ -126,6 +173,7 @@ public class DashboardActivity extends AppCompatActivity
 
         if (id == R.id.nav_history) {
             // Handle the camera action
+            ScheduledActivity.startThisActivity(this);
         } else if (id == R.id.nav_manage) {
 
         }

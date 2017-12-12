@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="@drawable/item_bg"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtDay"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text="Saturday"
+        android:gravity="center"
+        android:textColor="@color/orangeColorText"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtExplanatory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="3"
+
+            android:ellipsize="end"
+            android:text="@string/dummy_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iconType"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_trending_up_black_24dp" />
+
+            <TextView
+                android:id="@+id/txtType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pemasukkan"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txtValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="22sp"
+                android:text="RP 10.000"
+                android:textAlignment="textEnd"
+                android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="35dp"
+                android:padding="5dp"
+                android:layout_height="35dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_menu_delete"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

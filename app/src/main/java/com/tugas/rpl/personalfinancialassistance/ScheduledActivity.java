@@ -1,5 +1,7 @@
 package com.tugas.rpl.personalfinancialassistance;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +20,17 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class ScheduledActivity extends AppCompatActivity {
+import com.tugas.rpl.personalfinancialassistance.Adapter.ScheduledPagerAdapter;
+import com.tugas.rpl.personalfinancialassistance.Fragment.BaseFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class ScheduledActivity extends AppCompatActivity {
+    public static void startThisActivity(Activity parent) {
+        Intent intent = new Intent(parent,ScheduledActivity.class);
+        parent.startActivity(intent);
+    }
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -28,7 +39,7 @@ public class ScheduledActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ScheduledPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -44,7 +55,11 @@ public class ScheduledActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        List<Fragment> listFragment = new ArrayList<>();
+        listFragment.add(BaseFragment.newInstance(BaseFragment.HARIAN));
+        listFragment.add(BaseFragment.newInstance(BaseFragment.MINGGUAN));
+        listFragment.add(BaseFragment.newInstance(BaseFragment.BULANAN));
+        mSectionsPagerAdapter = new ScheduledPagerAdapter(getSupportFragmentManager(),listFragment);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);

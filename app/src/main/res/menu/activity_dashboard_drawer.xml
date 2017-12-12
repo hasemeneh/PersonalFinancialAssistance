@@ -4,12 +4,17 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_history"
-            android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="History" />
+            android:icon="@drawable/ic_timeline_black_24dp"
+            android:title="Scheduled"/>
+        <item
+            android:id="@+id/nav_ledger"
+            android:icon="@drawable/ic_local_library_black_24dp"
+            android:title="Ledger"/>
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Setting" />
+
         <item
             android:id="@+id/nav_about"
             android:icon="@android:drawable/ic_dialog_alert"

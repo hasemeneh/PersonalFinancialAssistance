@@ -26,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:padding="15dp"
                 android:paddingTop="30dp">
 
                 <LinearLayout
@@ -37,50 +38,39 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorBG"
-                        android:text="
-    "
-                        android:textColor="@android:color/white" />
-
-                    <TextView
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorBG"
-                        android:text="      Selamat pagi,"
+                        android:text="Selamat Datang,"
                         android:textColor="@android:color/white" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textViewNamaPengguna"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic"
                         android:background="@color/colorBG"
-                        android:text="      Nama Pengguna"
+                        android:text="Rivaldi Ridhla Julviar"
                         android:textColor="@android:color/white" />
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorBG"
-                        android:text="" />
+
 
                     <TextView
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorBG"
-                        android:text="                           Uang dingin"
+                        android:text="Uang Bebas Guna hari ini"
                         android:textColor="@android:color/white" />
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/textViewFreeToUseMoney"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:background="@color/colorBG"
+                        android:textStyle="bold"
                         android:gravity="top|center_vertical|center_horizontal"
                         android:text="Rp.200.000"
                         android:textColor="@android:color/white"
